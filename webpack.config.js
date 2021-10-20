@@ -8,7 +8,7 @@ module: {
     loaders: [
       {
         test: /.jsx/,
-        loader: 'babel',
+        loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
           presets: ['es2015', 'react']
@@ -16,11 +16,11 @@ module: {
       },
       {
         test: /\.css$/,
-        loader: 'style!css'
+        loader: 'style-loader!css-loader'
       },
       { 
         test: /\.(woff2?|ttf|eot|svg|png|jpe?g|gif)$/,
-        loader: 'file'
+        loader: 'file-loader'
       }
     ]
   }  

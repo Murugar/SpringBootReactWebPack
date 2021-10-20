@@ -167,6 +167,10 @@ class StudentForm extends React.Component {
         console.log( "Firstname: " + this.state.firstname );
         var newStudent = { firstname: this.state.firstname, lastname: this.state.lastname, email: this.state.email };
         this.props.createStudent( newStudent );
+        alert("created student");
+        this.setState({ firstname: "", lastname: "", email: ""});
+        console.log("Cleared Fields")
+        
         
     }
 
@@ -179,17 +183,17 @@ class StudentForm extends React.Component {
                         <div className="form-group">
                             <label for="firstname">First Name: </label>
                             <input type="text" placeholder="Firstname" className="form-control"
-                                name="firstname" id="firstname" onChange={this.handleChange}/>
+                                name="firstname" value={this.state.firstname} id="firstname" onChange={this.handleChange}/>
                         </div>
                         <div className="form-group">
                             <label for="lastname">Last Name: </label>
                             <input type="text" placeholder="Lastname" className="form-control"
-                                name="lastname"  id="lastname" onChange={this.handleChange}/>
+                                name="lastname"  value={this.state.lastname} id="lastname" onChange={this.handleChange}/>
                         </div>
                         <div className="form-group">
                             <label for="email">Email: </label>
                             <input type="text" placeholder="Email" className="form-control"
-                                name="email" id="email" onChange={this.handleChange}/>
+                                name="email" id="email" value={this.state.email} onChange={this.handleChange}/>
                         </div>
                         <div className="form-group">
                             <button className="btn btn-success" onClick={this.handleSubmit}>Save</button>
